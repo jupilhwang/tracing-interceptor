@@ -62,10 +62,13 @@ test {
 publishing {
     publications {
         maven(MavenPublication) {
-            from(components.java)
+            groupId 'jj.monitor'
+            artifactId 'tracing-interceptor'
+            version '0.1'
+
+            from components.java
         }
     }
-
     repositories {
         maven {
             name = "TracingInterceptor"
