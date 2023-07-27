@@ -110,7 +110,11 @@ class TracingBuilder {
     }
 
     Sender build(Encoding encoding) {
-      return OkHttpSender.newBuilder().endpoint(endpoint).encoding(encoding).build();
+      return OkHttpSender
+          .newBuilder()
+          .endpoint(endpoint)
+          .encoding(encoding)
+          .build();
     }
   }
 
@@ -128,7 +132,12 @@ class TracingBuilder {
     }
 
     Sender build(Encoding encoding) {
-      return KafkaSender.newBuilder().bootstrapServers(bootstrapServers).overrides(overrides).encoding(encoding).build();
+      return KafkaSender
+          .newBuilder()
+          .bootstrapServers(bootstrapServers)
+          .overrides(overrides)
+          .encoding(encoding)
+          .build();
     }
   }
 

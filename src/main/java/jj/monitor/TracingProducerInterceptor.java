@@ -40,6 +40,7 @@ public class TracingProducerInterceptor<K, V> implements ProducerInterceptor<K, 
           .tag(KafkaInterceptorTagKey.KAFKA_TOPIC, record.topic())
           .tag(KafkaInterceptorTagKey.KAFKA_CLIENT_ID,
               configuration.getString(ProducerConfig.CLIENT_ID_CONFIG))
+          .tag(KafkaInterceptorTagKey.KAFKA_KEY, (String) record.key().toString())
           .name(SPAN_SEND_NAME)
           .kind(Span.Kind.PRODUCER)
           .remoteServiceName(remoteServiceName)
@@ -50,20 +51,23 @@ public class TracingProducerInterceptor<K, V> implements ProducerInterceptor<K, 
   }
 
   @Override public void onAcknowledgement(RecordMetadata recordMetadata, Exception exception) {
-
 //    if(recordMetadata != null)  {
 ////      final KafkaInterceptorTagKey
+////      TraceContextOrSamplingFlags traceContextOrSamplingFlags = extractor.extract(record.headers());
+////      Span span = tracing.tracer().nextSpan(traceContextOrSamplingFlags);
 //
-//      recordMetadata.
+//      var topic = recordMetadata.topic();
+//      var partition = recordMetadata.partition();
+//      var offset = recordMetadata.offset();
 //
 //      if (!span.isNoop()) {
-//        if (record.key() instanceof String && !"".equals(recordMetadata.key())) {
+//        if (recordMe.key() instanceof String && !"".equals(recordMetadata.key())) {
 //          span.tag(KafkaInterceptorTagKey.KAFKA_KEY, recordMetadata.key().toString());
 //        }
 //        span
 //            .tag(KafkaInterceptorTagKey.KAFKA_TOPIC, recordMetadata.topic())
 //            .tag(KafkaInterceptorTagKey.KAFKA_CLIENT_ID, configuration.getString(ProducerConfig.CLIENT_ID_CONFIG))
-//            .name(SPAN_SEND_NAME)
+//            .name(SPAN_ACK_NAME)
 //            .kind(Span.Kind.PRODUCER)
 //            .remoteServiceName(remoteServiceName)
 //            .start()

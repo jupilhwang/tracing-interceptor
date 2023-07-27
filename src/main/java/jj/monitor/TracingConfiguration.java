@@ -16,7 +16,7 @@ public class TracingConfiguration {
   static final Logger LOGGER = LoggerFactory.getLogger(TracingConfiguration.class);
 
   public static final String SENDER_TYPE_CONFIG = "zipkin.sender.type";
-  public static final String SENDER_TYPE_DEFAULT = "NONE";
+  public static final String SENDER_TYPE_DEFAULT = "PROTO3";
   public static final String HTTP_ENDPOINT_CONFIG = "zipkin.http.endpoint";
   public static final String HTTP_ENDPOINT_DEFAULT = "http://localhost:9411/api/v2/spans";
   public static final String KAFKA_BOOTSTRAP_SERVERS_CONFIG = "zipkin.kafka.bootstrap.servers";

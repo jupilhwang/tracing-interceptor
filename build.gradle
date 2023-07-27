@@ -5,9 +5,9 @@ plugins {
 }
 
 group = 'jj.monitor'
-version = '1.0-SNAPSHOT'
+version = '0.1'
 description = 'Tracing Kafka Interceptor'
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
@@ -17,11 +17,28 @@ repositories {
 }
 
 dependencies {
-  api 'io.zipkin.brave:brave-instrumentation-kafka-clients:5.16.0'
-  api 'io.zipkin.reporter2:zipkin-reporter-brave:2.16.4'
-  api 'io.zipkin.reporter2:zipkin-sender-okhttp3:2.16.4'
-  api 'io.zipkin.reporter2:zipkin-sender-kafka:2.16.4'
-  implementation 'org.slf4j:slf4j-api:2.0.3'
+    api 'io.zipkin.brave:brave-instrumentation-kafka-clients:5.16.0'
+    api 'io.zipkin.reporter2:zipkin-reporter-brave:2.16.4'
+    api 'io.zipkin.reporter2:zipkin-sender-okhttp3:2.16.4'
+    api 'io.zipkin.reporter2:zipkin-sender-kafka:2.16.4'
+    implementation 'org.slf4j:slf4j-api:2.0.3'
+
+
+    implementation platform("io.opentelemetry:opentelemetry-bom:1.28.0")
+    implementation platform("io.opentelemetry.instrumentation:opentelemetry-instrumentation-bom:1.28.0")
+//    implementation platform("io.opentelemetry.instrumentation:opentelemetry-instrumentation-bom-alpha:1.28.0-alpha")
+//    implementation('io.opentelemetry:opentelemetry-api')
+//    implementation('io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:1.28.0')
+//    implementation('io.opentelemetry:opentelemetry-semconv')
+//    implementation('io.opentelemetry:opentelemetry-sdk-extension-autoconfigure')
+
+    implementation('io.opentelemetry.instrumentation:opentelemetry-kafka-clients-common:1.28.0-alpha')
+
+//    testCompileOnly("com.google.auto.value:auto-value-annotations")
+//    testAnnotationProcessor("com.google.auto.value:auto-value")
+    compileOnly('com.google.errorprone:error_prone_annotations:2.20.0')
+
+//    implementation project(":instrumentation:kafka:kafka-clients:kafka-clients-common:library")
 
 //  testImplementation 'io.zipkin.brave:brave-tests:5.13.3'
 //  testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
@@ -30,7 +47,8 @@ dependencies {
 //  testImplementation 'org.apache.logging.log4j:log4j-1.2-api:2.14.0'
 //  testImplementation 'org.apache.logging.log4j:log4j-slf4j-impl:2.14.0'
 //  testImplementation 'org.jetbrains.kotlin:kotlin-test'
-  compileOnly 'org.apache.kafka:kafka-clients:3.2.3'
+
+    compileOnly 'org.apache.kafka:kafka-clients:3.5.1'
 }
 
 test {
