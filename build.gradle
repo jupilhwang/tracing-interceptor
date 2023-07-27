@@ -60,16 +60,16 @@ test {
 //}
 
 publishing {
-    publications {
-        maven(MavenPublication) {
-            artifactId 'tracing-interceptor'
-
-            from components.java
-        }
-    }
+//    publications {
+//        gpr(MavenPublication) {
+//            artifactId 'tracing-interceptor'
+//
+//            from components.java
+//        }
+//    }
     repositories {
         maven {
-            name = "TracingInterceptor"
+            name = "GitHubPackages"
             url = "https://maven.pkg.github.com/jupilhwang/TracingInterceptor"
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
