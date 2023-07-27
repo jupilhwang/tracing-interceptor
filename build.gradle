@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'jj.monitor'
-version = '0.1'
+version = '0.0.1'
 description = 'Tracing Kafka Interceptor'
 java.sourceCompatibility = JavaVersion.VERSION_11
 
