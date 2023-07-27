@@ -69,7 +69,7 @@ publishing {
     repositories {
         maven {
             name = "TracingInterceptor"
-            url = "https://maven.pkg.github.com/jupillhwang/TracingInterceptor"
+            url = "https://maven.pkg.github.com/jupilhwang/TracingInterceptor"
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
