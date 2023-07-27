@@ -62,9 +62,7 @@ test {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId 'jj.monitor'
             artifactId 'tracing-interceptor'
-            version '0.1'
 
             from components.java
         }
