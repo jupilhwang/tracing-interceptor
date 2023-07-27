@@ -60,11 +60,22 @@ test {
 //}
 
 publishing {
-  publications {
-    maven(MavenPublication) {
-      from(components.java)
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
     }
-  }
+
+    repositories {
+        maven {
+            name = "TracingInterceptor"
+            url = "https://maven.pkg.github.com/jupillhwang/TracingInterceptor"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }
 
 tasks.withType(JavaCompile) {
