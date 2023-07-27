@@ -12,13 +12,15 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  release:
+    types: [created]
 
 permissions:
   contents: read
+  packages: write
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
