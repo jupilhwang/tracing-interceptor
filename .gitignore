@@ -27,8 +27,9 @@ out/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-.idea
-.gradle
+.idea/
+.gradle/
+gradle/
 
 ### NetBeans ###
 /nbproject/private/
