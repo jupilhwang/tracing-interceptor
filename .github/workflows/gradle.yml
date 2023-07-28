@@ -24,11 +24,12 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Validate Gradle wrapper
-      uses: gradle/wrapper-validation-action@ccb4328a959376b642e027874838f60f8e596de3
+      uses: gradle/wrapper-validation-action@v1
     - name: Build and Publish with Gradle
-      uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629 # v2.6.0
+      uses: gradle/gradle-build-action@v2 # v2.6.0
       with:
-        arguments: publish
+        gradle-version: 7.4.2
+        arguments: :build
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

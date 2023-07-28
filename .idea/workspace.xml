@@ -165,7 +165,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.TracingInterceptor [publish]">
+  <component name="RunManager" selected="Gradle.TracingInterceptor [publishToMavenLocal]">
     <configuration name="TracingInterceptor [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -210,7 +210,7 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="TracingInterceptor [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TracingInterceptor [publishGprPublicationToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -221,7 +221,29 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="jar" />
+            <option value="publishGprPublicationToMavenLocal" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="TracingInterceptor [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publishToMavenLocal" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -256,10 +278,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TracingInterceptor [publishToMavenLocal]" />
+        <item itemvalue="Gradle.TracingInterceptor [publishGprPublicationToMavenLocal]" />
         <item itemvalue="Gradle.TracingInterceptor [publish]" />
         <item itemvalue="Gradle.TracingInterceptor [build]" />
         <item itemvalue="Gradle.TracingInterceptor [clean]" />
-        <item itemvalue="Gradle.TracingInterceptor [jar]" />
       </list>
     </recent_temporary>
   </component>
