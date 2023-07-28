@@ -62,7 +62,7 @@ test {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifactId 'TracingInterceptor'
+            artifactId 'tracing-interceptor'
             from(components.java)
         }
     }
