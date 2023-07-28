@@ -61,7 +61,7 @@ test {
 
 publishing {
     publications {
-        gpr(MavenPublication) {
+        maven(MavenPublication) {
             artifactId 'TracingInterceptor'
             from(components.java)
         }
