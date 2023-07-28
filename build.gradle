@@ -60,13 +60,11 @@ test {
 //}
 
 publishing {
-//    publications {
-//        gpr(MavenPublication) {
-//            artifactId 'tracing-interceptor'
-//
-//            from components.java
-//        }
-//    }
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
     repositories {
         maven {
             name = "GitHubPackages"
