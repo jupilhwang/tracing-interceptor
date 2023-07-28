@@ -7,8 +7,8 @@
 
 name: Publish package to Github Packages with Gradle
 on:
-  push:
-    branches: [ "main" ]
+#  push:
+#    branches: [ "main" ]
   release:
     types: [created]
 jobs:
@@ -26,12 +26,12 @@ jobs:
     - name: Validate Gradle wrapper
       uses: gradle/wrapper-validation-action@v1
 
-    - name: Build with gradle
-      uses: gradle/gradle-build-action@v2 # v2.6.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        arguments: build --scan
+#    - name: Build with gradle
+#      uses: gradle/gradle-build-action@v2 # v2.6.0
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      with:
+#        arguments: build --scan
 
     - name: Publish with Gradle
       uses: gradle/gradle-build-action@v2 # v2.6.0
