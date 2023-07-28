@@ -61,10 +61,9 @@ test {
 
 publishing {
     publications {
-        maven(MavenPublication) {
-            artifactId "TracingInterceptor"
-            version "0.0.1"
-            from components.java
+        gpr(MavenPublication) {
+            artifactId 'TracingInterceptor'
+            from(components.java)
         }
     }
     repositories {
